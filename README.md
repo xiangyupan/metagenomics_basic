@@ -6,7 +6,7 @@ Custom scripts for manuscript "Dynamics of rumen gene expression, microbiome, an
 `bwa index -a bwtsw GCF_001704415.1_ASM170441v1_genomic.fna`   
 `samtools faidx GCF_001704415.1_ASM170441v1_genomic.fna`   
 `java -jar picard.jar CreateSequenceDictionary R=GCF_001704415.1_ASM170441v1_genomic.fna O=GCF_001704415.1_ASM170441v1_genomic.fna.dict`    
-`bwa mem -t 4 -M -R '@RG\tID:Rumen0-1\tLB:Rumen0-1\tPL:ILLUMINA\tSM:Rumen0-1' GCF_001704415.1_ASM170441v1_genomic.fna Rumen0-1_1.clean.fq.gz Rumen0-1_2.clean.fq.gz > Rumen0-1.sam`     
+`bwa mem -t 4 -M -R \'@RG\tID:Rumen0-1\tLB:Rumen0-1\tPL:ILLUMINA\tSM:Rumen0-1\' GCF_001704415.1_ASM170441v1_genomic.fna Rumen0-1_1.clean.fq.gz Rumen0-1_2.clean.fq.gz > Rumen0-1.sam`     
 `samtools view -bS Rumen0-1.sam >  Rumen0-1.bam`     
 `samtools view -b -f 4 Rumen0-1.bam > Rumen0-1_unmapped.bam`    
 `samtools sort -o Rumen0-1.unmapped.sort.bam -@ 8 -O bam Rumen0-1.unmapped.bam`   
