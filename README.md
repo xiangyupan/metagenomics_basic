@@ -1,5 +1,5 @@
-# metagenomics_basic
-Basic analysis of metagenomics from assembly to gene abundance    
+# Custom scripts and codes
+Custom scripts for manuscript "Dynamics of rumen gene expression, microbiome, and their interplay during early rumen development"    
 ## 1. Quality control    
 `java -Xmx30g -jar trimmomatic-0.36.jar PE -threads 10 Rumen0-1_1.fq.gz Rumen0-1_2.fq.gz  Rumen0-1_1.clean.fq.gz Rumen0-1_1.unpaired.fq.gz Rumen0-1_2.clean.fq.gz Rumen0-1_2.unpaired.fq.gz LEADING:25 TRAILING:25 SLIDINGWINDOW:4:25 MINLEN:40 TOPHRED33 > Rumen0-1.log`   
 ### 1.1 Remove contaminate from host    
@@ -65,3 +65,4 @@ diamond blastp --query geneset_unabundent_unigene.faa --db nr --outfmt 6 --threa
 `hmmscan dbCAN-fam-HMMs.txt geneset_unabundent_unigene.faa > CAZyme_geneset_unabundent_unigene.dbCAN`   
 `sh hmmscan-parser.sh CAZyme_geneset_unabundent_unigene.dbCAN > CAZyme_geneset_unabundent_unigene.dbCAN.anno`   
 
+**Finally: We'd love to hear from you. If you have any questions, please don't be hestitate to contact the author of this manuscript: pan_xiangyu@nwafu.edu.cn**    
