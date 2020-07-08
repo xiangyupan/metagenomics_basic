@@ -1,5 +1,7 @@
 # Custom scripts and codes
-Custom scripts for manuscript "Dynamics of rumen gene expression, microbiome, and their interplay during early rumen development"    
+Custom scripts for manuscript "Dynamics of rumen gene expression, microbiome, and their interplay during early rumen development"     
+_________________________________________________________________________________________________________________________________
+# **Metagenome analysis**
 ## 1. Quality control    
 ```
 java -Xmx30g -jar trimmomatic-0.36.jar PE -threads 10 Rumen0-1_1.fq.gz Rumen0-1_2.fq.gz  Rumen0-1_1.clean.fq.gz Rumen0-1_1.unpaired.fq.gz Rumen0-1_2.clean.fq.gz Rumen0-1_2.unpaired.fq.gz LEADING:25 TRAILING:25 SLIDINGWINDOW:4:25 MINLEN:40 TOPHRED33 > Rumen0-1.log
